@@ -8,27 +8,24 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   const nextId = idAsNumber + 1
 
-  if (idAsNumber === 4) {
+  if (idAsNumber === 7) {
     return new NextResponse(`<!DOCTYPE html><html><head>
-    <title>This is frame 4</title>
-    <meta property="og:image" content="${process.env.NEXT_PUBLIC_SITE_URL}/park-4.png" />
+    <title>This is frame 7</title>
+    <meta property="og:image" content="${process.env.NEXT_PUBLIC_SITE_URL}/nba-awards-24-7.jpg" />
     <meta property="fc:frame" content="vNext" />
-    <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_SITE_URL}/park-4.png" />
-    <meta property="fc:frame:button:1" content="View Tutorial" />
-    <meta property="fc:frame:button:1:action" content="link" />
-    <meta property="fc:frame:button:1:target" content="https://github.com/ChangoMan/frames" />
-    <meta property="fc:frame:button:2" content="Restart" />
-    <meta property="fc:frame:button:2:action" content="post" />
-    <meta property="fc:frame:button:2:target" content="${process.env.NEXT_PUBLIC_SITE_URL}/api/basic?id=1" />
+    <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_SITE_URL}/nba-awards-24-7.jpg" />
+    <meta property="fc:frame:button:1" content="Restart" />
+    <meta property="fc:frame:button:1:action" content="post" />
+    <meta property="fc:frame:button:1:target" content="${process.env.NEXT_PUBLIC_SITE_URL}/api/basic?id=1" />
     </head></html>`)
   }
 
   return new NextResponse(`<!DOCTYPE html><html><head>
     <title>This is frame ${id}</title>
-    <meta property="og:image" content="${process.env.NEXT_PUBLIC_SITE_URL}/park-${id}.png" />
+    <meta property="og:image" content="${process.env.NEXT_PUBLIC_SITE_URL}/nba-awards-24-${id}.jpg" />
     <meta property="fc:frame" content="vNext" />
-    <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_SITE_URL}/park-${id}.png" />
-    <meta property="fc:frame:button:1" content="Next Page" />
+    <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_SITE_URL}/nba-awards-24-${id}.jpg" />
+    <meta property="fc:frame:button:1" content="Next Award" />
     <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_SITE_URL}/api/basic?id=${nextId}" />
   </head></html>`)
 }
